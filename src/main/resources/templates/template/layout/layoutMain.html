@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- head 태그를 "template/layout/base :: common_header(~{::title},~{::link})"로 대체-->
+<!-- title태그의 값(메인 타이틀) link태그의 값들을 common_header로 넘겨줌-->
+<head th:replace="template/layout/base :: common_header(~{::title},~{::link})">
+
+  <title>메인 타이틀</title>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/themes/smoothness/jquery-ui.css}">
+</head>
+<body> 메인 컨텐츠 </body>
+</html>

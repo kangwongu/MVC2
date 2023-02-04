@@ -1,0 +1,14 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- th:fragment 사용으로 다른 페이지에서 common_header 이름으로 해당 코드 조각을 불러올 수 있다 -->
+<!-- title, links 값을 전달받고, th:replace태그를 통해 전달받은 값으로 갈아끼운다 -->
+<head th:fragment="common_header(title,links)">
+
+  <title th:replace="${title}">레이아웃 타이틀</title>
+  <!-- 공통 -->
+  <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/awesomeapp.css}">
+  <link rel="shortcut icon" th:href="@{/images/favicon.ico}">
+  <script type="text/javascript" th:src="@{/sh/scripts/codebase.js}"></script>
+
+  <!-- 추가 -->
+  <th:block th:replace="${links}" />
+</head>
